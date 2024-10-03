@@ -7,7 +7,7 @@ Npm::~Npm() {
 }
 
 int Npm::install(std::string package) {
-    std::string npmCall = "npm install -g " + package;
+    std::string npmCall = "sudo npm install -g " + package;
     return system(npmCall.c_str());
 }
 
@@ -20,7 +20,7 @@ int Npm::install(std::vector<std::string> packages) {
 }
 
 int Npm::uninstall(std::string package) {
-    std::string npmCall = "npm uninstall -g " + package;
+    std::string npmCall = "sudo npm uninstall -g " + package;
     return system(npmCall.c_str());
 }
 
@@ -41,7 +41,7 @@ int Npm::update(std::vector<std::string> packages) {
 }
 
 int Npm::update() {
-    std::string npmCall = "npm update -g";
+    std::string npmCall = "sudo npm update -g";
     return system(npmCall.c_str());
 }
 
